@@ -40,6 +40,13 @@ def odd_or_even():
 # Multiplication Table
 # Ask for a number n
 # Print its multiplication table up to 10
+def multiplication_table():
+    n = input("Give me a number: ")
+    multiple = 0
+    while multiple != 10:
+        multiple += 1
+        print(n + "*" + str(multiple) + "=" + str(int(n) * multiple))
+
 
 # Guess the Number
 # Generate a random number between 1 and 20
@@ -79,7 +86,9 @@ def odd_or_even():
 def main():
     # hello_and_age()
     # calculator()
-    odd_or_even()
+    # odd_or_even()
+    multiplication_table()
+
 
 if __name__ == "__main__":
     main()
