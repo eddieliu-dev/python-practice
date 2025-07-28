@@ -11,8 +11,22 @@ def hello_and_age():
 # Prints the result
 def calculator():
     calculator = input("Calculator initiated:\n")
-
+    if "+" in calculator:
+        first_num, second_num = calculator.split("+")
+        print(float(first_num)+float(second_num))
+    elif "-" in calculator:
+        first_num, second_num = calculator.split("-")
+        print(float(first_num) - float(second_num))
+    elif "*" in calculator:
+        first_num, second_num = calculator.split("*")
+        print(float(first_num) * float(second_num))
+    else:
+        first_num, second_num = calculator.split("/")
+        print(float(first_num) / float(second_num))
 
 def main():
     # hello_and_age()
     calculator()
+
+if __name__ == "__main__":
+    main()
