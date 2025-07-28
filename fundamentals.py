@@ -137,13 +137,20 @@ def word_count():
 # fahrenheit_to_celsius(f)
 def celsius_to_fahrenheit(c):
     print(c * 9/5 +32)
-
 def fahrenheit_to_celsius(f):
     print((f-32) * 5/9)
 
 # Read and Count Words from File
 # Write a text file manually (data.txt)
 # Write a script to open the file, read the content, and count how many words it has
+def read_and_count_words_from_file(f):
+    count = 0
+    with open(f) as file:
+        for line in file:
+            words = line.split()
+            count += len(words)
+            # print(line)
+    print(count)
 
 # Contact Book
 # Allow user to:
@@ -162,8 +169,9 @@ def main():
     # list_processing()
     # student_scores_dictionary()
     # word_count()
-    celsius_to_fahrenheit(35)
-    fahrenheit_to_celsius(100)
+    # celsius_to_fahrenheit(35)
+    # fahrenheit_to_celsius(100)
+    read_and_count_words_from_file("data.txt")
 
 
 if __name__ == "__main__":
