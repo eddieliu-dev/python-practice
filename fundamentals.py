@@ -135,6 +135,11 @@ def word_count():
 # Write two functions:
 # celsius_to_fahrenheit(c)
 # fahrenheit_to_celsius(f)
+def celsius_to_fahrenheit(c):
+    print(c * 9/5 +32)
+
+def fahrenheit_to_celsius(f):
+    print((f-32) * 5/9)
 
 # Read and Count Words from File
 # Write a text file manually (data.txt)
@@ -156,7 +161,9 @@ def main():
     # guess_the_number()
     # list_processing()
     # student_scores_dictionary()
-    word_count()
+    # word_count()
+    celsius_to_fahrenheit(35)
+    fahrenheit_to_celsius(100)
 
 
 if __name__ == "__main__":
