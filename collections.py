@@ -32,6 +32,7 @@ print("\n----------Dictionary----------")
 #     # "year": 2020
 # }
 thisdict = dict(name = "John", age = 36, contry = "Norway")
+thisdict["religion"] = "none"
 for x in thisdict:
     print(x)
     print(type(x))

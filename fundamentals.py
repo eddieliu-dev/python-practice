@@ -119,6 +119,17 @@ def student_scores_dictionary():
 # Word Count in a Sentence
 # Ask for a sentence
 # Count how many times each word appears
+def word_count():
+    sentence = input("Please enter a sentence: ")
+    words = sentence.split()
+    word_dict = dict()
+    for w in words:
+        word_dict[w] = 0
+    for w in words:
+        for d in word_dict:
+            if w == d:
+                word_dict[d] += 1
+    print(word_dict)
 
 # Temperature Converter Function
 # Write two functions:
@@ -144,7 +155,8 @@ def main():
     # multiplication_table()
     # guess_the_number()
     # list_processing()
-    student_scores_dictionary()
+    # student_scores_dictionary()
+    word_count()
 
 
 if __name__ == "__main__":
