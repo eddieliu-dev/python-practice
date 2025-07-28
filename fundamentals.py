@@ -1,3 +1,5 @@
+import random
+
 # Hello and Age
 # Asks the user for their name and age
 # Prints: "Hello [name], you will be [age + 1] next year!"
@@ -52,6 +54,17 @@ def multiplication_table():
 # Generate a random number between 1 and 20
 # Let the user guess until they get it right
 # Show how many attempts it took
+def guess_the_number():
+    rand = random.randint(1, 20)
+    guess = int(input("Guess a number between 1 and 20: "))
+    while guess != rand:
+        if guess < rand:
+            print("Too low!")
+            guess = int(input("Guess again: "))
+        else:
+            print("Too high!")
+            guess = int(input("Guess again: "))
+    print("Correct!")
 
 # List Processing
 # Given a list of numbers: [5, 3, 8, 6, 7, 2]
@@ -87,7 +100,8 @@ def main():
     # hello_and_age()
     # calculator()
     # odd_or_even()
-    multiplication_table()
+    # multiplication_table()
+    guess_the_number()
 
 
 if __name__ == "__main__":
