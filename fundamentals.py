@@ -158,6 +158,48 @@ def read_and_count_words_from_file(f):
 # Search for contact
 # List all contacts
 # Save the data to a text file (one contact per line)
+def contact_book():
+    contact_dict = {
+        "John Doe": "99999999999"
+    }
+    print("Manual: to be written. Enter \"I'm done\" to end the session.")
+    print("-------------------------------------------------------------")
+    user_command = input("What do you want to do today? ")
+    while user_command != "I'm done":
+        if "add" in user_command.lower():
+            user_command = input("Please enter the name: ")
+            name = user_command
+            user_command = input("Please enter the phone number: ")
+            phone_number = user_command
+            contact_dict[name] = phone_number
+            # print(contact_dict)
+            print("Add complete!")
+            print("-------------------------------------------------------------")
+            user_command = input("Anything else? ")
+        elif "search" in user_command.lower():
+            user_command = input("Please enter the name: ")
+            for cont in contact_dict:
+                if cont == user_command:
+                    print(contact_dict[user_command])
+                else:
+                    print("Cannot find " + user_command)
+            print("-------------------------------------------------------------")
+            user_command = input("Anything else? ")
+        elif "list" in user_command.lower():
+            with open("contact_book.txt") as book:
+                print(book.read())
+            print("-------------------------------------------------------------")
+            user_command = input("Anything else? ")
+        elif "save" in user_command.lower():
+            with open("contact_book.txt", "w") as book:
+                for cont in contact_dict:
+                    book.write(cont + ": " + contact_dict[cont] + "\n")
+            print("Save complete!")
+            print("-------------------------------------------------------------")
+            user_command = input("Anything else? ")
+        else:
+            print("-------------------------------------------------------------")
+            user_command = input("Please enter a valid command: ")
 
 
 def main():
@@ -171,7 +213,8 @@ def main():
     # word_count()
     # celsius_to_fahrenheit(35)
     # fahrenheit_to_celsius(100)
-    read_and_count_words_from_file("data.txt")
+    # read_and_count_words_from_file("data.txt")
+    contact_book()
 
 
 if __name__ == "__main__":
