@@ -88,32 +88,53 @@ def list_processing():
     list.sort(reverse=True)
     print(list)
 
-    # Student Scores Dictionary
-    # Create a dictionary storing student names and their scores
-    # Add at least 3 students
-    # Print the student with the highest score
-    #def student_scores_dictionary():
+
+# Student Scores Dictionary
+# Create a dictionary storing student names and their scores
+# Add at least 3 students
+# Print the student with the highest score
+def student_scores_dictionary():
+    student_dic = {
+        "student1": {
+            "name": "Bob",
+            "score": 93
+        },
+        "student2": {
+            "name": "Jack",
+            "score": 88
+        },
+        "student3": {
+            "name": "John",
+            "score": 100
+        }
+    }
+    highest_student = student_dic["student1"]
+    for stu in student_dic.values():
+        if stu["score"] > highest_student["score"]:
+            highest_student = stu
+    highest_score = highest_student["score"]
+    print("Student with the highest score is: " + highest_student["name"] + " with the score of " + str(highest_score))
 
 
-    # Word Count in a Sentence
-    # Ask for a sentence
-    # Count how many times each word appears
+# Word Count in a Sentence
+# Ask for a sentence
+# Count how many times each word appears
 
-    # Temperature Converter Function
-    # Write two functions:
-    # celsius_to_fahrenheit(c)
-    # fahrenheit_to_celsius(f)
+# Temperature Converter Function
+# Write two functions:
+# celsius_to_fahrenheit(c)
+# fahrenheit_to_celsius(f)
 
-    # Read and Count Words from File
-    # Write a text file manually (data.txt)
-    # Write a script to open the file, read the content, and count how many words it has
+# Read and Count Words from File
+# Write a text file manually (data.txt)
+# Write a script to open the file, read the content, and count how many words it has
 
-    # Contact Book
-    # Allow user to:
-    # Add contact (name, phone)
-    # Search for contact
-    # List all contacts
-    # Save the data to a text file (one contact per line)
+# Contact Book
+# Allow user to:
+# Add contact (name, phone)
+# Search for contact
+# List all contacts
+# Save the data to a text file (one contact per line)
 
 
 def main():
@@ -122,7 +143,8 @@ def main():
     # odd_or_even()
     # multiplication_table()
     # guess_the_number()
-    list_processing()
+    # list_processing()
+    student_scores_dictionary()
 
 
 if __name__ == "__main__":
